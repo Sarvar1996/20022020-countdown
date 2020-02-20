@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+    <title>20.02.2020</title>
+    <link rel="shortcut icon" href="image/download.jpg" />
+
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m, e, t, r, i, k, a) {
+            m[i] = m[i] || function() {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(57229543, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true
+        });
+
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/57229543" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+</head>
+
+<body>
+    <div class="bodies">
+        <div class="escape" id="escape">
+            <div>Скорость</div>
+        </div>
+
+        <div class="escape" id="reliability">
+            <div>Надёжность</div>
+        </div>
+        <div class="escape" id="noLimits">
+            <div>Никаких ограничений</div>
+        </div>
+
+
+        <div class="middle" id="middle">
+            <div class="mask">
+                <h1>20.02.2020</h1>
+            </div>
+            <hr>
+            <div class="mask2">
+                <p id="demo"></p>
+            </div>
+            <a href="#videoBlock">
+                <div class="blob white">
+                    <div class="pushBtn">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+    <div id="videoBlock">
+        <iframe class="frames" src="https://www.youtube.com/embed/HN68bEdFu1g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+    
+        <iframe class="frames" src="https://www.youtube.com/embed/sca2Y83ZJQg"frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+
+    </div>
+
+</body>
+
+<script>
+    function declOfNum(number, titles) {
+        cases = [2, 0, 1, 1, 1, 2];
+        return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+    }
+
+    var countDownDate = new Date("Feb 20, 2020 00:00:00").getTime();
+    var countDownfunction = setInterval(function() {
+
+        var now = new Date().getTime();
+
+
+        var distance = countDownDate - now;
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+
+
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("demo").innerHTML =
+            days + declOfNum(days, [' Дней ', ' Дней ', ' Дней ']) +
+            hours + declOfNum(hours, [' Час ', ' Часа ', ' Часов ']) +
+            minutes + declOfNum(minutes, [' Минута ', ' Минуты ', ' Минут ']) +
+            seconds + declOfNum(seconds, [' Секунда ', ' Секунды ', ' Секунд ']);
+
+        if (days < 0) {
+            clearInterval(countDownfunction);
+            document.getElementById("demo").innerHTML = "Expired";
+        };
+
+
+    });
+
+    $(document).ready(function() {
+        // Hide the div
+        $("#middle").hide();
+        // Show the div after 5s
+        $("#middle").delay(9000).fadeIn(1000);
+    });
+    $(document).ready(function() {
+        // Hide the div
+        $("#videoBlock").hide();
+        // Show the div after 5s
+        $("#videoBlock").delay(9000).fadeIn(1000);
+    });
+    $(document).ready(function() {
+        // Hide the div
+        $("#demo").hide();
+        // Show the div after 5s
+        $("#demo").delay(10000).fadeIn(1000);
+    });
+
+    $(document).ready(function() {
+        // Hide the div
+        $("#escape").show();
+        $("#escape").delay(2000).fadeOut(1000);
+        // Show the div after 5s
+
+    });
+    $(document).ready(function() {
+        $("#reliability").hide();
+        $("#reliability").delay(3000).fadeIn(1000).delay(1000).fadeOut(1000);
+
+    });
+    $(document).ready(function() {
+        // Hide the div
+        $("#noLimits").hide();
+        $("#noLimits").delay(6000).fadeIn(1000).delay(1000).fadeOut(1000);
+        // Show the div after 5s
+
+    });
+
+</script>
+
+</html>

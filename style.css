@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+@font-face {
+    font-family: myFirstFont;
+    src: url(6590.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+}
+
+.bodies {
+    text-align: center;
+    background-size: cover;
+    background-image: url("image/Landing%20page1.jpg");
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 54px;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    animation: bg 10s linear 1;
+}
+
+.escape div {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 23%;
+}
+
+.mask {
+    width: 685px;
+    height: 200px;
+    overflow: hidden;
+    margin-top: 150px;
+}
+
+.mask2 {
+    width: 685px;
+    height: 200px;
+    overflow: hidden;
+
+}
+
+.middle {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: myFirstFont;
+    animation-delay: 10s;
+}
+
+h1 {
+    font-size: 200px;
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+    animation: moveUp 20s linear 1;
+
+
+}
+
+i {
+    color: white;
+}
+
+#demo {
+    font-size: 26px;
+    font-weight: lighter;
+    word-spacing: 4px;
+    font-family: 'Roboto';
+    opacity: 0.8;
+    animation: move 2s ease-in-out 1;
+
+}
+
+hr {
+    margin: auto;
+    width: 100%;
+    border: 2px solid #fff;
+}
+
+.escape div:first-of-type {
+    animation: showup 3s 1;
+}
+
+#videoBlock {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-image: url(image/Untitled-2.jpg)
+}
+
+.frames {
+    margin: 20px;
+    height: 573px;
+    width: 49%;
+}
+
+@keyframes move {
+    0% {
+        transform: translateY(-200px);
+    }
+    30% {
+        transform: translateY(-150px);
+    }
+    50% {
+        transform: translateY(-120px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveUp {
+    0% {
+        transform: translateY(200px) 30% {
+            transform: translateY(150px);
+        }
+        50% {
+            transform: translateY(100px);
+        }
+    }
+    100% {
+        transform: translateY(0)
+    }
+}
+
+@keyframes showup {
+    0% {
+        opacity: 0;
+    }
+
+    80% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    0% {
+        margin-left: -800px;
+    }
+    20% {
+        margin-left: -800px;
+    }
+    35% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        width: 0px;
+    }
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+    30% {
+        width: 690px;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 690px;
+    }
+}
+
+@keyframes bg {
+    0% {
+        background-image: url(image/Untitled-2.jpg);
+    }
+    90% {
+        background-image: url(image/Untitled-2.jpg);
+    }
+    100% {
+        background-image: url(image/Landing%20page1.jpg);
+    }
+}
+
+@media (max-width: 991px) {
+    .escape div {
+        margin-top: 80%;
+    }
+    .bodies {
+        background-position: 1500px;
+    }
+    .frames {
+        height: 690px;
+        margin-bottom: 150px;
+        width: 96%;
+    }
+    #videoBlock{
+        display: block;
+    }
+ 
+}
+}
+
+@media (min-width: 1600px) {
+    .frames {
+        height: 965px;
+    }
+}
+.pushBtn {
+    color: white;
+    font-size: 40px;
+    padding-top: 15px;
+
+}
+
+.blob {
+    position: absolute;
+    top: 100%;
+    left: 45%;
+    border: 1px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    margin: 10px;
+    height: 70px;
+    width: 70px;
+    transform: scale(1);
+    animation: pulse-black 2s infinite;
+}
+
+
+
+.blob.white {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    animation: pulse-white 2s infinite;
+}
+
+@keyframes pulse-white {
+    0% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+        transform: scale(0.85);
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
